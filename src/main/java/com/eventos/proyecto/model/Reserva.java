@@ -17,10 +17,8 @@ import lombok.*;
 @Entity
 public class Reserva {
     
-        @Id
-
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private Long idReserva;
     private LocalDateTime fechaReserva;
     private String estado;

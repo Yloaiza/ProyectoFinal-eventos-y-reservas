@@ -18,29 +18,17 @@ import lombok.*;
 @Entity
 public class Evento {
 
-        @Id
-
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private Long idEvento;
-
     private String nombre;
-
     private String tipo;
-
     private Date fecha;
-
     private String hora;
-
-    private double precio;
-
+    private Double precio;
     private int cupoDisponible;
-
     private String descripcion;
-
     @ManyToOne
-
     @JoinColumn(name = "idUbicacion")
-
     private Ubicacion ubicacion;
 }

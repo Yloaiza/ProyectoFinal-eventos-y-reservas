@@ -14,17 +14,11 @@ import lombok.*;
 @Entity
 public class Ubicacion {
 
-        @Id
-
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private Long idUbicacion;
-
     private String nombreLugar;
-
     private String direccion;
-
     private String ciudad;
-
     private int capacidad;
 }

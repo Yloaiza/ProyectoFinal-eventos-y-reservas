@@ -18,21 +18,13 @@ import lombok.*;
 @Entity
 public class Pago {
 
-        @Id
-
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private Long idPago;
-
     private Date fechaPago;
-
     private double monto;
-
     private String metodoPago;
-
     @OneToOne
-
     @JoinColumn(name = "idReserva")
-
     private Reserva reserva;
 }

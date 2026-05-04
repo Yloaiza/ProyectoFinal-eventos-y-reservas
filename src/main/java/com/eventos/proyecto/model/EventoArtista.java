@@ -16,21 +16,13 @@ import lombok.*;
 @Entity
 public class EventoArtista {
 
-        @Id
-
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private Long id;
-
     @ManyToOne
-
     @JoinColumn(name = "idEvento")
-
     private Evento evento;
-
     @ManyToOne
-
     @JoinColumn(name = "idArtista")
-
     private Artista artista;
 }

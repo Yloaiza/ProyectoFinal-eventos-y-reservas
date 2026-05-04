@@ -14,22 +14,13 @@ import lombok.*;
 public class Usuario {
 
         @Id
-
     private Long cedula;
-
     private String nombre;
-
     private String apellido;
-
     private String telefono;
-
     private String username;
-
     private String password;
-
     @ManyToOne
-
     @JoinColumn(name = "idRol")
-
     private Rol rol;
 }
