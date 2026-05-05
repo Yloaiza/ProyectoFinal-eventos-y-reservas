@@ -20,5 +20,5 @@ public class Ubicacion {
     private String nombreLugar;
     private String direccion;
     private String ciudad;
-    private int capacidad;
+    private Integer capacidad;
 }

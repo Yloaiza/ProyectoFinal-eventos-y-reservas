@@ -18,5 +18,5 @@ public class Rol {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private Long idRol;
-    private String nombre;
+    private String nombre; //admin,cliente
 }

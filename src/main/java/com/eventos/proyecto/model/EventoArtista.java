@@ -6,7 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
 
 @Getter
@@ -21,8 +21,10 @@ public class EventoArtista {
     private Long id;
     @ManyToOne
     @JoinColumn(name = "idEvento")
+    @JsonBackReference
     private Evento evento;
     @ManyToOne
     @JoinColumn(name = "idArtista")
     private Artista artista;
+    
 }

@@ -4,5 +4,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.eventos.proyecto.model.Pago;
 
-public interface PagoRespository extends JpaRepository<Pago, Long> {
+public interface PagoRepository extends JpaRepository<Pago, Long> {
 }
