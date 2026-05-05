@@ -24,4 +24,24 @@ public class RolController {
     public List<Rol> listar() {
         return rolRepository.findAll();
     }
+
+    // Actualizar rol
+    @PutMapping("/{id}")
+    public Rol actualizar(@PathVariable Long id, @RequestBody Rol rolActualizado) {
+        Rol rol = rolRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Rol no encontrado"));
+        rol.setNombre(rolActualizado.getNombre());
+        return rolRepository.save(rol);
+    }
+    // Eliminar rol
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable Long id) {
+        rolRepository.deleteById(id);
+    }
+    // Obtener rol por ID
+    @GetMapping("/{id}")
+    public Rol obtenerPorId(@PathVariable Long id) {
+        return rolRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Rol no encontrado"));
+    }
 }

@@ -26,4 +26,20 @@ public class ArtistaController {
     public List<Artista> listar() {
         return artistaRepository.findAll();
     }
+    // Actualizar artista
+    @PutMapping("/{id}")
+    public Artista actualizar(@PathVariable Long id, @RequestBody Artista artistaActualizado) {
+        Artista artista = artistaRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Artista no encontrado"));
+        artista.setNombre(artistaActualizado.getNombre());
+        artista.setTipo(artistaActualizado.getTipo());
+        artista.setDescripcion(artistaActualizado.getDescripcion());
+        return artistaRepository.save(artista);
+    }
+    // Eliminar artista
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable Long id) {
+        artistaRepository.deleteById(id);
+    }
+
 }
